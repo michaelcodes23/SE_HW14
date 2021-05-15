@@ -9,9 +9,27 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
+  background-color: #40BFC7;
+  background-size: cover;
+  color: white;
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+form{
+  max-width: 50%;
+  margin: 0 auto;
+}
+
+button{
+  margin:10px;
+  display: block;
+}
+ul{
+  margin-bottom: 30px;
+}
+.main{
+  margin-top: 10%;
 }

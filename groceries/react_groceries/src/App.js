@@ -27,9 +27,7 @@ function App() {
         }
     ]
 
-  const Form=()=>{
-    const [values, setValues] = useState(list)
-  }
+  
   //States
   const [item, setItem] = useState("");
   const [brand, setBrand] = useState("");
@@ -81,25 +79,26 @@ function App() {
       console.log(event.value)
     }
   return (
-    <div>
+    <div class = "container is-fluid">
       <ul>
         {groceryList.map((value, index)=>{
           if(value.isPurchased){
           return (<>
             <li key={index}>{value.item}, Quanity: {value.quantity}
-            <button onClick={()=>handleDelete(index)} className = "button">Delete</button>
+            <br/>
+            <button onClick={()=>handleDelete(index)} className = "button is-danger">Delete</button>
             </li>
           </>)
           }
         })}
       </ul>
-      <form onSubmit={handleSubmit}>
-        New Grocery Item: <input type = "text" value={item} onChange= {handleChangeItem} name="item"/><br/>
-        Brand:  <input type = "text" value={brand} onChange= {handleChangeBrand} name="brand"/><br/>
-        Units:  <input type = "text" value={units} onChange= {handleChangeUnits} name="units"/><br/>
-        Quantity:  <input type = "text" value={quantity} onChange= {handleChangeQuantity} name="quantity"/><br/>
-        Did You Purchase?  <input type = "checkbox" value={isPurchased} onChange= {handleChangeIsPurchased} name="isPurchased"/><br/>
-        <input className = "button" type = "submit" value = "Submit"/>
+      <form class = "form" onSubmit={handleSubmit}>
+        New Grocery Item: <input class = "input is-focused" type = "text" value={item} onChange= {handleChangeItem} name="item"/><br/>
+        Brand:  <input class = "input is-focused" type = "text" value={brand} onChange= {handleChangeBrand} name="brand"/><br/>
+        Units:  <input class = "input is-focused" type = "text" value={units} onChange= {handleChangeUnits} name="units"/><br/>
+        Quantity:  <input  class = "input is-focused" type = "text" value={quantity} onChange= {handleChangeQuantity} name="quantity"/><br/>
+        Did You Purchase?  <input  class = "radio" type = "checkbox" value={isPurchased} onChange= {handleChangeIsPurchased} name="isPurchased"/><br/>
+        <input className = "button is-link" type = "submit" value = "Submit"/>
       </form>
       
     </div>
